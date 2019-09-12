@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:padding="@dimen/dp10"
+    android:orientation="vertical"
+    tools:context=".RequestToWhomItMayConcernActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="-5dp"
+                android:text="@string/request_to_whom"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/header_txt_size" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_bottom"
+                android:gravity="center"
+                android:hint="Emirates ID Number"
+                android:textColorHint="@color/colorAccent">
+
+                <EditText
+                    android:id="@+id/et_eid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    android:inputType="number"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_bottom"
+                android:gravity="center"
+                android:hint="Customer Name"
+                android:textColorHint="@color/colorAccent">
+
+                <EditText
+                    android:id="@+id/et_customer_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    android:inputType="textCapSentences"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_bottom"
+                android:gravity="center"
+                android:hint="ID Barah Number"
+                android:textColorHint="@color/colorAccent">
+
+                <EditText
+                    android:id="@+id/et_id_barah_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    android:inputType="number"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_bottom"
+                android:gravity="center"
+                android:hint="Email Id"
+                android:textColorHint="@color/colorAccent">
+
+                <EditText
+                    android:id="@+id/et_email_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    android:inputType="textEmailAddress"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_bottom"
+                android:gravity="center"
+                android:hint="Unified Number"
+                android:textColorHint="@color/colorAccent">
+
+                <EditText
+                    android:id="@+id/et_unified_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    android:inputType="number"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_bottom"
+                android:gravity="center"
+                android:hint="Mobile Number"
+                android:textColorHint="@color/colorAccent">
+
+                <EditText
+                    android:id="@+id/et_mobile_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    android:inputType="phone"
+                    android:imeOptions="actionDone"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20"
+android:background="@drawable/sigin_btn_bg"
+                android:enabled="false"
+
+                android:text="Submit"
+                android:textColor="@color/colorWhite" />
+
+
+            <TextView
+                android:id="@+id/tvSkip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Skip this step"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dp20"
+                android:padding="@dimen/dp10"
+                android:textColor="@color/colorAccent"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

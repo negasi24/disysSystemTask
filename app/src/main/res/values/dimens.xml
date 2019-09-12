@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="header_txt_size">35sp</dimen>
+    <dimen name="margin_bottom">15dp</dimen>
+    <dimen name="dp20">20dp</dimen>
+    <dimen name="btn_txt_size">18sp</dimen>
+    <dimen name="dp10">10dp</dimen>
+    <dimen name="cardview_margin">5dp</dimen>
+    <dimen name="dp5">5dp</dimen>
+    <dimen name="cardview_padding">5dp</dimen>
+    <dimen name="cardview_corner_radius">4dp</dimen>
+    <dimen name="text1">17sp</dimen>
+    <dimen name="dp3">3dp</dimen>
+    <dimen name="text2">13sp</dimen>
+    <dimen name="text3">10sp</dimen>
+    <dimen name="news_img_height">250dp</dimen>
+</resources>
