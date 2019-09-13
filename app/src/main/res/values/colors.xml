@@ -5,4 +5,7 @@
     <color name="colorAccent">#4488c4</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorWhiteSmoke">#dfdede</color>
+    <color name="colorRed">#c43224</color>
+    <color name="colorPrimaryTrans">#CC282f4e</color>
+
 </resources>
