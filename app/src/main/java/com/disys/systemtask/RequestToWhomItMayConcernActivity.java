@@ -4,17 +4,23 @@ import android.app.LoaderManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.Loader;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.disys.systemtask.model.User;
 import com.disys.systemtask.network.ReqWhomItMayConcernLoader;
 import com.disys.systemtask.utility.SessionSharPref;
 import com.disys.systemtask.utility.Utilities;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.jakewharton.rxbinding2.widget.RxTextView;
 
 import java.util.HashMap;
@@ -36,6 +42,8 @@ public class RequestToWhomItMayConcernActivity extends AppCompatActivity impleme
     private static final String TAG = RequestToWhomItMayConcernActivity.class.getName();
 
     EditText etEid, etName, etIdBarhNo, etEmail, etUnifiedNo, etMobile;
+
+    private FirebaseRemoteConfig mFirebaseRemoteConfig;
 
     Button btnSumite;
 
@@ -63,6 +71,54 @@ public class RequestToWhomItMayConcernActivity extends AppCompatActivity impleme
         sessionSharPref = new SessionSharPref(this);
 
         init();
+        initFirebaseRemoteConfig();
+    }
+
+
+    private void initFirebaseRemoteConfig()
+    {
+        mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
+
+        FirebaseRemoteConfigSettings remoteConfigSettings = new FirebaseRemoteConfigSettings.Builder()
+                .setDeveloperModeEnabled(true)
+                .build();
+        mFirebaseRemoteConfig.setConfigSettings(remoteConfigSettings);
+
+        mFirebaseRemoteConfig.setDefaults(R.xml.remote_config_defaults);
+
+        fetchRemoteValue();
+    }
+
+    private void fetchRemoteValue()
+    {
+        // cache expiration in seconds
+        long cacheExpiration = 3600;
+
+//expire the cache immediately for development mode.
+        if (mFirebaseRemoteConfig.getInfo().getConfigSettings().isDeveloperModeEnabled()) {
+            cacheExpiration = 10*60*1000;
+        }
+
+// fetch
+        mFirebaseRemoteConfig.fetch(cacheExpiration)
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            // task successful. Activate the fetched data
+                            mFirebaseRemoteConfig.activateFetched();
+
+                            sessionSharPref.saveSecretCode(mFirebaseRemoteConfig.getString("consumerKey"),mFirebaseRemoteConfig.getString("consumerSecret"));
+
+                        } else {
+                            //task failed
+                        }
+                    }
+                });
+
+
+
+
     }
 
     //Intiallize the controls and events
