@@ -23,6 +23,9 @@ import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Function;
 import io.reactivex.observers.DisposableObserver;
 
+
+//This login activty is not using after intregrat the firebase google authentication.
+
 /*
 -> LoginActivity is for login purpose.
 -> User should submit atlease once in request to whom it may concern form for authenticate the login.

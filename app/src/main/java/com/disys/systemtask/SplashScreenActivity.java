@@ -34,6 +34,14 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/*
+-> Splash screen acitviyt is for authentication purpose.
+-> Added firebase google authentication
+-> One time authentication
+*/
+
+
 public class SplashScreenActivity extends BaseActivity {
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
