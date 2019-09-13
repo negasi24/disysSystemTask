@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "512091143719",
+    "firebase_url": "https://disys-sytem-task.firebaseio.com",
+    "project_id": "disys-sytem-task",
+    "storage_bucket": "disys-sytem-task.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512091143719:android:8620334f82e16992fcd802",
+        "android_client_info": {
+          "package_name": "com.disys.systemtask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512091143719-4evc73i19vapig3cjv32tueqi05p6vml.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.disys.systemtask",
+            "certificate_hash": "93fcc742785662b8ec84c8ae129ee0d02e0e359b"
+          }
+        },
+        {
+          "client_id": "512091143719-8iccr6uo2a0kqjr7t8jp3shhpah4bj75.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlKeINVE89hIZxeILkRfirhGWU6sRHeis"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512091143719-8iccr6uo2a0kqjr7t8jp3shhpah4bj75.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
