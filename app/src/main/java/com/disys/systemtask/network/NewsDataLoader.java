@@ -9,6 +9,7 @@ import android.util.Log;
 import com.disys.systemtask.R;
 import com.disys.systemtask.utility.APIURLs;
 import com.disys.systemtask.utility.ApiClient;
+import com.disys.systemtask.utility.SessionSharPref;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -119,11 +120,16 @@ public class NewsDataLoader extends AsyncTaskLoader<HashMap<String, String>> {
         firebase remote configuration
          */
 
+        String key= new SessionSharPref(context).getConsumerKey();
+        String sec= new SessionSharPref(context).getConsumerSec();
+
+        System.out.println("Sec Code network -"+key+"-"+sec);
+
         Request request = new Request.Builder()
                 .url(APIURLs.GetNews)
                 .header("Content-Type", "application/json")
-                .header("consumer-key", "mobile_dev")
-                .header("consumer-secret", "20891a1b4504ddc33d42501f9c8d2215fbe85008")
+                .header("consumer-key", key)
+                .header("consumer-secret", sec)
                 .get()
                 .build();
         Response responses = null;

@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import com.disys.systemtask.R;
 import com.disys.systemtask.utility.APIURLs;
 import com.disys.systemtask.utility.ApiClient;
+import com.disys.systemtask.utility.SessionSharPref;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -107,6 +108,10 @@ public class ReqWhomItMayConcernLoader extends AsyncTaskLoader<HashMap<String, S
      firebase remote configuration
     */
     private String makeHttpRequest() throws  Exception {
+
+        String key= new SessionSharPref(context).getConsumerKey();
+        String sec= new SessionSharPref(context).getConsumerSec();
+
         String jsonResponse = "";
         OkHttpClient client = ApiClient.getClient();
         RequestBody formBody = new FormBody.Builder()
@@ -120,8 +125,8 @@ public class ReqWhomItMayConcernLoader extends AsyncTaskLoader<HashMap<String, S
         Request request = new Request.Builder()
                 .url(APIURLs.SignUp)
                 .header("Content-Type", "application/x-www-form-urlencoded")
-                .header("consumer-key", "mobile_dev")
-                .header("consumer-secret", "20891a1b4504ddc33d42501f9c8d2215fbe85008")
+                .header("consumer-key", key)
+                .header("consumer-secret", sec)
                 .post(formBody)
                 .build();
 
